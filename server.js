@@ -24,11 +24,19 @@ console.log('   Senha:', process.env.EMAIL_PASSWORD ? '✅ Carregada' : '❌ NÃ
 
 // Configuração do Email
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true para 465, false para outras portas
     auth: {
         user: 'solutionscumbe@gmail.com',
         pass: process.env.EMAIL_PASSWORD
-    }
+    },
+    tls: {
+        rejectUnauthorized: false
+    },
+    connectionTimeout: 30000, // 30 segundos
+    greetingTimeout: 30000,
+    socketTimeout: 30000
 });
 
 // Verificar conexão com o Gmail
