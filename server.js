@@ -1,4 +1,3 @@
-// server.js - Backend para enviar emails para solutionscumbe@gmail.com
 require('dotenv').config();
 
 const express = require('express');
@@ -17,32 +16,33 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Verificar se a senha foi carregada
 console.log('📧 Configuração de email:');
 console.log('   Email:', 'solutionscumbe@gmail.com');
 console.log('   Senha:', process.env.EMAIL_PASSWORD ? '✅ Carregada' : '❌ NÃO CARREGADA');
 
-// Configuração do Email
+// CONFIGURAÇÃO CORRETA DO GMAIL
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // true para 465, false para outras portas
+    port: 587,
+    secure: false, // false para porta 587
     auth: {
         user: 'solutionscumbe@gmail.com',
         pass: process.env.EMAIL_PASSWORD
     },
     tls: {
+        ciphers: 'SSLv3',
         rejectUnauthorized: false
     },
-    connectionTimeout: 30000, // 30 segundos
-    greetingTimeout: 30000,
-    socketTimeout: 30000
+    connectionTimeout: 60000,
+    greetingTimeout: 60000,
+    socketTimeout: 60000
 });
 
-// Verificar conexão com o Gmail
+// Testar conexão (opcional, pode remover se der erro)
 transporter.verify((error, success) => {
     if (error) {
         console.error('❌ Erro na conexão com Gmail:', error.message);
+        console.log('⚠️ Tentando configuração alternativa...');
     } else {
         console.log('✅ Conexão com Gmail estabelecida!');
     }
@@ -59,59 +59,19 @@ app.post('/api/contact', async (req, res) => {
     try {
         // Email para o administrador
         const adminMailOptions = {
-            from: `"CumbeSolutions Site" <solutionscumbe@gmail.com>`,
+            from: `"CumbeSolutions" <solutionscumbe@gmail.com>`,
             to: 'solutionscumbe@gmail.com',
             replyTo: email,
             subject: `🔔 NOVA SOLICITAÇÃO - ${name} - ${service}`,
             html: `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <style>
-                        body { font-family: Arial, sans-serif; }
-                        .container { max-width: 600px; margin: 0 auto; }
-                        .header { background: #2563eb; color: white; padding: 20px; text-align: center; }
-                        .content { padding: 20px; }
-                        .field { margin-bottom: 15px; }
-                        .label { font-weight: bold; color: #1e293b; }
-                        .value { color: #334155; margin-top: 5px; }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <div class="header">
-                            <h2>🎯 CumbeSolutions</h2>
-                            <p>Nova Solicitação de Serviço</p>
-                        </div>
-                        <div class="content">
-                            <div class="field">
-                                <div class="label">👤 Cliente:</div>
-                                <div class="value">${name}</div>
-                            </div>
-                            <div class="field">
-                                <div class="label">📧 Email:</div>
-                                <div class="value">${email}</div>
-                            </div>
-                            <div class="field">
-                                <div class="label">📞 Telefone/WhatsApp:</div>
-                                <div class="value">${phone || 'Não informado'}</div>
-                            </div>
-                            <div class="field">
-                                <div class="label">🎯 Serviço:</div>
-                                <div class="value">${service}</div>
-                            </div>
-                            <div class="field">
-                                <div class="label">💬 Mensagem:</div>
-                                <div class="value">${message.replace(/\n/g, '<br>')}</div>
-                            </div>
-                            <div class="field">
-                                <div class="label">📅 Data:</div>
-                                <div class="value">${new Date().toLocaleString('pt-BR')}</div>
-                            </div>
-                        </div>
-                    </div>
-                </body>
-                </html>
+                <h2>🎯 Nova Solicitação de Serviço</h2>
+                <p><strong>👤 Cliente:</strong> ${name}</p>
+                <p><strong>📧 Email:</strong> ${email}</p>
+                <p><strong>📞 Telefone:</strong> ${phone || 'Não informado'}</p>
+                <p><strong>🎯 Serviço:</strong> ${service}</p>
+                <p><strong>💬 Mensagem:</strong></p>
+                <p>${message.replace(/\n/g, '<br>')}</p>
+                <p><strong>📅 Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
             `
         };
         
@@ -121,38 +81,12 @@ app.post('/api/contact', async (req, res) => {
             to: email,
             subject: '✅ CumbeSolutions - Recebemos sua solicitação!',
             html: `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <style>
-                        body { font-family: Arial, sans-serif; }
-                        .container { max-width: 600px; margin: 0 auto; }
-                        .header { background: #2563eb; color: white; padding: 20px; text-align: center; }
-                        .content { padding: 20px; }
-                        .btn { background: #25d366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px 0; }
-                        .footer { font-size: 12px; color: #64748b; margin-top: 20px; text-align: center; }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <div class="header">
-                            <h2>✅ CumbeSolutions</h2>
-                        </div>
-                        <div class="content">
-                            <h3>Olá ${name}!</h3>
-                            <p>Recebemos sua solicitação de <strong>${service}</strong>!</p>
-                            <p>Entraremos em contato em breve pelo WhatsApp ou email.</p>
-                            <p><strong>Resumo da sua solicitação:</strong><br>${message.substring(0, 200)}${message.length > 200 ? '...' : ''}</p>
-                            <a href="https://wa.me/258844124493" class="btn">💬 Falar agora no WhatsApp</a>
-                            <div class="footer">
-                                <hr>
-                                <p>Este é um email automático. Respondemos em até 2 horas úteis.</p>
-                                <p>© 2026 CumbeSolutions - Todos os direitos reservados</p>
-                            </div>
-                        </div>
-                    </div>
-                </body>
-                </html>
+                <h2>Olá ${name}!</h2>
+                <p>Recebemos sua solicitação de <strong>${service}</strong>!</p>
+                <p>Entraremos em contato em breve pelo WhatsApp: <strong>+258 84 412 4493</strong></p>
+                <p>Resumo da sua solicitação:<br>${message.substring(0, 200)}</p>
+                <br>
+                <p>Atenciosamente,<br>CumbeSolutions</p>
             `
         };
         
@@ -166,7 +100,7 @@ app.post('/api/contact', async (req, res) => {
         
     } catch (error) {
         console.error('   ❌ Erro no envio:', error.message);
-        res.status(500).json({ success: false, message: 'Erro ao enviar: ' + error.message });
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 
@@ -177,18 +111,12 @@ app.post('/api/newsletter', async (req, res) => {
     console.log(`\n📧 Nova inscrição newsletter: ${email}`);
     
     try {
-        const mailOptions = {
+        await transporter.sendMail({
             from: `"CumbeSolutions" <solutionscumbe@gmail.com>`,
             to: 'solutionscumbe@gmail.com',
             subject: '📧 Nova inscrição Newsletter',
-            html: `
-                <h3>Nova inscrição na Newsletter</h3>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
-            `
-        };
-        
-        await transporter.sendMail(mailOptions);
+            html: `<p><strong>Email:</strong> ${email}</p><p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>`
+        });
         console.log('   ✅ Notificação enviada');
         res.json({ success: true });
         
