@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CumbeSolutions | Desenvolvimento de Software</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CumbeSolutions - Desenvolvimento de software, websites profissionais, ERPs e automação de serviços em Moçambique. Solicite orçamento gratuito." />
+    <meta name="keywords" content="desenvolvimento software, websites, ERP, automação, Moçambique, sistemas web" />
+    <meta name="author" content="CumbeSolutions" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CumbeSolutions | Desenvolvimento de Software" />
+    <meta property="og:description" content="Transformamos ideias em soluções digitais" />
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "CumbeSolutions",
+      "url": "https://cumbesolutions.com",
+      "email": "solutionscumbe@gmail.com",
+      "telephone": "+258844124493",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Maputo",
+        "addressCountry": "MZ"
+      }
+    }
+    </script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Cumbe<span>Solutions</span></a>
+
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Modo escuro">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <nav class="navbar" id="navbar">
+                <a href="#home">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#portfolio">Portfólio</a>
+                <a href="#testimonials">Depoimentos</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text" data-aos="fade-right">
+                <h1>Transformamos Ideias em <span class="typed-text"></span></h1>
+                <p>
+                    Desenvolvemos sistemas web, websites profissionais, ERPs,
+                    automação de serviços e materiais gráficos para empresas e
+                    empreendedores em Moçambique.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary">Solicitar Orçamento</a>
+                    <a href="#services" class="btn secondary">Ver Serviços</a>
+                </div>
+            </div>
+            <div class="hero-card" data-aos="fade-left" data-aos-delay="200">
+                <div class="code-window">
+                    <div class="dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <pre id="codeLines">
+&lt;system&gt;
+  status: online
+  performance: 100%
+  innovation: true
+  location: "Moçambique"
+&lt;/system&gt;
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#ffffff" fill-opacity="0.95" d="M0,192L48,186.7C96,181,192,171,288,176C384,181,480,203,576,197.3C672,192,768,160,864,154.7C960,149,1056,171,1152,181.3C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="45">0</h3>
+                    <p>Projetos Entregues</p>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="28">0</h3>
+                    <p>Clientes Satisfeitos</p>
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="6">0</h3>
+                    <p>Anos de Experiência</p>
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Suporte Garantido</p>
+                    <i class="fas fa-headset"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Sobre Nós</h2>
+                <p>Conheça a CumbeSolutions</p>
+            </div>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                    A <strong>CumbeSolutions</strong> é uma empresa especializada em
+                    desenvolvimento de software e soluções digitais. Criamos sistemas
+                    personalizados, websites modernos e materiais gráficos
+                    profissionais para ajudar empresas a crescer e automatizar os seus
+                    processos.
+                </p>
+                <p>
+                    O nosso compromisso é entregar soluções eficientes, seguras e com
+                    design profissional, adaptadas às necessidades de cada cliente.
+                    Com sede em Maputo, Moçambique, atendemos empresas de todos os
+                    portes com excelência e inovação.
+                </p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Metodologia Ágil</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Suporte Dedicado</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tecnologias Modernas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section bg-light" id="services">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Nossos Serviços</h2>
+                <p>Soluções tecnológicas sob medida para o seu negócio</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Desenvolvimento de Sistemas Web</h3>
+                    <p>
+                        Plataformas personalizadas para gestão de dados, processos e
+                        operações empresariais com segurança e escalabilidade.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-globe"></i>
+                    <h3>Criação de Websites</h3>
+                    <p>
+                        Websites institucionais, portfólios, blogs e lojas virtuais
+                        modernos, responsivos e otimizados para SEO.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Sistemas Internos (ERP)</h3>
+                    <p>
+                        Controle de estoque, vendas, finanças, RH e automação de
+                        processos internos para maior eficiência.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automação de Serviços</h3>
+                    <p>
+                        Reduza tarefas manuais e aumente a produtividade do seu
+                        negócio com processos automatizados.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Criação de Logotipos</h3>
+                    <p>
+                        Identidade visual profissional que fortalece a sua marca
+                        e transmite credibilidade ao mercado.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Cartões e Panfletos</h3>
+                    <p>
+                        Materiais promocionais modernos e de alta qualidade para
+                        divulgar o seu negócio com estilo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Portfólio</h2>
+                <p>Conheça alguns dos nossos projetos</p>
+            </div>
+
+            <div class="portfolio-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="system">Sistemas</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="web">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Criação de Websites Profissionais</h3>
+                    <p>Websites institucionais modernos, responsivos e otimizados para SEO.</p>
+                    <div class="portfolio-tags">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>Responsivo</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="web">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>E-commerce Moderno</h3>
+                    <p>Loja virtual completa com carrinho, pagamentos e dashboard administrativo.</p>
+                    <div class="portfolio-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="system">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Sistema de Gestão Escolar</h3>
+                    <p>Controle de alunos, notas, pagamentos e relatórios avançados.</p>
+                    <div class="portfolio-tags">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="system">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Sistema de Stock (ERP)</h3>
+                    <p>Gestão de produtos, entradas, saídas e inventário em tempo real.</p>
+                    <div class="portfolio-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="design">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3>Criação de Logotipos</h3>
+                    <p>Identidade visual única e profissional para fortalecer sua marca.</p>
+                    <div class="portfolio-tags">
+                        <span>Adobe Illustrator</span>
+                        <span>Photoshop</span>
+                        <span>Vector</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="design">
+                    <div class="portfolio-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Design de Panfletos</h3>
+                    <p>Panfletos criativos e impactantes para divulgar seus produtos e serviços.</p>
+                    <div class="portfolio-tags">
+                        <span>Adobe InDesign</span>
+                        <span>Canva Pro</span>
+                        <span>Print Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section bg-light" id="testimonials">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Depoimentos de quem já transformou seu negócio conosco</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Excelente trabalho! Entregaram antes do prazo e com qualidade superior. O sistema desenvolvido superou nossas expectativas."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="João Silva">
+                        </div>
+                        <div class="author-info">
+                            <h4>João Silva</h4>
+                            <span>CEO, TechMoz</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Profissionalismo e dedicação impressionantes. O website ficou moderno, rápido e aumentou nossas vendas em 40%."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Maria Santos">
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <span>Diretora, ModaBr</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"O ERP personalizado transformou nossa gestão. Hoje temos controle total e economizamos horas de trabalho manual."</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Carlos Mendes">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos Mendes</h4>
+                            <span>Gestor, LogiStock</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content" data-aos="fade-up">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Receba Novidades</h3>
+                <p>Inscreva-se para receber dicas, novidades e ofertas exclusivas sobre tecnologia</p>
+                <form id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn primary">Inscrever <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p id="newsletterMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contacto</h2>
+                <p>Solicite o seu orçamento gratuito</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Fale Conosco</h3>
+                    <p>
+                        Estamos prontos para transformar a sua ideia em uma solução
+                        digital profissional. Entre em contato e tire suas dúvidas.
+                    </p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +258 84 412 4493</p>
+                        <p class="email-copy">
+                            <i class="fas fa-envelope"></i> 
+                            solutionscumbe@gmail.com
+                            <button class="copy-btn" onclick="copyEmail()" aria-label="Copiar email">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </p>
+                        <p><i class="fas fa-location-dot"></i> Maputo, Moçambique</p>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102974.319114996!2d32.515581!3d-25.969248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee689dacb8a3b9b%3A0x8e4e8e8e8e8e8e8e!2sMaputo%2C%20Mozambique!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 12px; margin-top: 1.5rem;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            title="Mapa CumbeSolutions">
+                        </iframe>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Seu nome" required />
+                        <i class="fas fa-user"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Seu e-mail" required />
+                        <i class="fas fa-envelope"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Seu telefone (WhatsApp)" />
+                        <i class="fas fa-phone"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <select id="serviceType" required>
+                            <option value="">📌 Selecione o serviço desejado</option>
+                            <option value="Desenvolvimento de Sistemas Web">💻 Desenvolvimento de Sistemas Web</option>
+                            <option value="Criação de Websites">🌐 Criação de Websites</option>
+                            <option value="Sistemas ERP">📊 Sistemas ERP</option>
+                            <option value="Automação de Serviços">🤖 Automação de Serviços</option>
+                            <option value="Criação de Logotipos">🎨 Criação de Logotipos</option>
+                            <option value="Cartões e Panfletos">📇 Cartões e Panfletos</option>
+                        </select>
+                        <i class="fas fa-cogs"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Descreva o seu projeto" required></textarea>
+                        <i class="fas fa-pencil-alt"></i>
+                        <span class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn primary" id="submitBtn">
+                        Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CumbeSolutions</h4>
+                    <p>Transformando ideias em soluções digitais desde 2021.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#contact">Contacto</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Horário de Atendimento</h4>
+                    <p>Segunda - Sexta: 8h às 18h</p>
+                    <p>Sábado: 9h às 13h</p>
+                    <p>Suporte 24/7 via WhatsApp</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CumbeSolutions. Todos os direitos reservados.</p>
+                <p>
+                    <a href="#" id="privacyLink">Política de Privacidade</a> | 
+                    <a href="#" id="termsLink">Termos de Serviço</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/258844124493" class="whatsapp" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent" id="cookieConsent">
+        <p>🍪 Este site utiliza cookies para melhorar sua experiência.</p>
+        <button onclick="acceptCookies()">Aceitar</button>
+    </div>
+
+    <!-- Modals -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p>A sua privacidade é importante para nós. Esta política explica como coletamos, usamos e protegemos suas informações.</p>
+            <h3>Coleta de Dados</h3>
+            <p>Coletamos informações que você nos fornece diretamente, como nome, email e telefone.</p>
+            <h3>Uso das Informações</h3>
+            <p>Utilizamos suas informações para responder suas solicitações e melhorar nossos serviços.</p>
+            <p><small>Última atualização: Janeiro 2026</small></p>
+        </div>
+    </div>
+
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Termos de Serviço</h2>
+            <p>Ao contratar nossos serviços, você concorda com os seguintes termos.</p>
+            <h3>Escopo dos Serviços</h3>
+            <p>Oferecemos desenvolvimento de software, websites e materiais gráficos conforme especificado.</p>
+            <h3>Prazos e Entregas</h3>
+            <p>Os prazos são acordados previamente e cumprimos o cronograma estabelecido.</p>
+            <p><small>Última atualização: Janeiro 2026</small></p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>
