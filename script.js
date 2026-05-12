@@ -1,7 +1,7 @@
 // script.js - Frontend completo com integração para Email e WhatsApp
 
 // Configuração da API
-const API_URL = 'http://localhost:3001/api';
+const API_URL = 'https://cumbesolutionspage.onrender.com/api';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Hide loader
